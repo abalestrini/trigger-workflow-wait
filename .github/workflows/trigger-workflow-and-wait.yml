@@ -1,6 +1,9 @@
 name: Trigger & Wait
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      base_url:
+        required: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -8,5 +11,5 @@ jobs:
       - uses: actions/checkout@master
       - name: Pause for 25 seconds
         run: |
+          echo "base_url: ${{ inputs.base_url }}"
           sleep 5
-          exit 1
