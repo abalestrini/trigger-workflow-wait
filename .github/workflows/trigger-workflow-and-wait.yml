@@ -8,4 +8,5 @@ jobs:
       - uses: actions/checkout@master
       - name: Pause for 25 seconds
         run: |
-          sleep 25
+          sleep 5
+          exit 1
